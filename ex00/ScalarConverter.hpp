@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: geonwkim <geonwkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/10 16:31:45 by geonwkim          #+#    #+#             */
-/*   Updated: 2025/02/20 22:11:46 by geonwkim         ###   ########.fr       */
+/*   Created: 2025/02/20 22:07:19 by geonwkim          #+#    #+#             */
+/*   Updated: 2025/02/20 22:07:25 by geonwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
-#include <iostream>
+#ifndef SCALARCONVERTER_HPP
+#define SCALARCONVERTER_HPP
 
-int main(int argc, char **argv) {
-    if (argc != 2) {
-        std::cout << "Usage: ./convert <literal>\n";
-        return 1;
-    }
-    ScalarConverter::convert(argv[1]);
-    return 0;
-}
+#include <string>
+
+class ScalarConverter {
+public:
+    static void convert(const std::string &literal);
+
+private:
+    ScalarConverter();
+    ScalarConverter(const ScalarConverter &);
+    ScalarConverter &operator=(const ScalarConverter &);
+    ~ScalarConverter();
+};
+
+#endif
