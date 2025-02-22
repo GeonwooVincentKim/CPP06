@@ -6,7 +6,7 @@
 /*   By: geonwkim <geonwkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 22:07:19 by geonwkim          #+#    #+#             */
-/*   Updated: 2025/02/20 22:08:07 by geonwkim         ###   ########.fr       */
+/*   Updated: 2025/02/22 20:37:34 by geonwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,19 @@
 #include <cstdlib>
 #include <limits>
 #include <cmath>
+
+bool ScalarConverter::isChar(const std::string &literal) {
+    if (literal.length() == 1) {
+        return true;
+    } else if (literal.length() == 3 && literal[0] == '\'' && literal[2] == '\'') {
+        return true;
+    }
+    return 0;
+}
+
+bool ScalarConverter::isInt(const std::string &literal) {
+    
+}
 
 static bool isChar(const std::string &literal);
 static bool isInt(const std::string &literal);
