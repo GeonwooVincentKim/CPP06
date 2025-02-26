@@ -14,7 +14,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = ex00
-SRCS = main.cpp Bureaucrat.cpp
+SRCS = main.cpp ScalarConverter.cpp type.cpp converters.cpp
 OBJS = $(SRCS:.cpp=.o)
 RM = rm -f
 
