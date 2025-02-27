@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: geonwkim <geonwkim@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: geonwkim <geonwkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 22:50:37 by geonwkim          #+#    #+#             */
-/*   Updated: 2025/02/26 22:50:37 by geonwkim         ###   ########.fr       */
+/*   Updated: 2025/02/27 23:04:24 by geonwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <cstdlib>
 #include <ctime>
 
+// ランダムに A、B、C のインスタンスを生成し、Base ポインタとして返す関数
 Base *generate(void)
 {
 	int i = rand() % 3;
@@ -29,6 +30,7 @@ Base *generate(void)
 		return new C;
 }
 
+// ポインタ p が指すオブジェクトの実際の型を判定し、A、B、C のいずれかを出力する関数
 void identify(Base *p)
 {
 	if (dynamic_cast<A*>(p))
@@ -39,6 +41,7 @@ void identify(Base *p)
 		std::cout << "C" << std::endl;
 }
 
+// 参照 p が指すオブジェクトの実際の型を判定し、A、B、C のいずれかを出力します。ポインタを使用せずに型を判定するために dynamic_cast を使用する関数
 void identify(Base &p)
 {
 	try
@@ -64,6 +67,7 @@ void identify(Base &p)
 	catch (std::exception &e) {}
 }
 
+// generate 関数を呼び出してランダムなオブジェクトを生成し、その型を identify 関数で判定して出力する関数
 int main(void)
 {
 	srand(time(NULL));

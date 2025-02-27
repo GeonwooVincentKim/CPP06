@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: geonwkim <geonwkim@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: geonwkim <geonwkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 22:51:31 by geonwkim          #+#    #+#             */
-/*   Updated: 2025/02/26 22:51:31 by geonwkim         ###   ########.fr       */
+/*   Updated: 2025/02/27 23:00:34 by geonwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 class Base
 {
 	public:
-		virtual ~Base();
+		virtual ~Base(); // 仮想デストラクタ
 };
 
 #endif
