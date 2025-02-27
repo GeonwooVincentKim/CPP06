@@ -20,6 +20,7 @@
 # include <limits>
 # include <cmath>
 
+// 文字列を倍精度浮動小数点型に変換して出力する関数
 # define MIN_INT std::numeric_limits<int>::min() //-2147483648
 # define MAX_INT std::numeric_limits<int>::max() //2147483647
 # define MIN_FLOAT std::numeric_limits<float>::min() //-3.40282e+38
@@ -27,6 +28,7 @@
 # define MIN_DOUBLE std::numeric_limits<double>::min() //-1.79769e+308
 # define MAX_DOUBLE std::numeric_limits<double>::max() //1.79769e+308
 
+// 文字列を倍精度浮動小数点型に変換して出力する関数
 enum    e_type
 {
     SPECIAL = 0,
@@ -37,17 +39,19 @@ enum    e_type
     INVALID = -1
 };
 
+// 文字列を倍精度浮動小数点型に変換して出力する関数
 class	ScalarConverter
 {
 	private:
-		ScalarConverter(void);
-		ScalarConverter(ScalarConverter const &src);
-		~ScalarConverter(void);
-		ScalarConverter	&operator=(ScalarConverter const &rhs);
+		ScalarConverter(void); // プライベートコンストラクタ
+		ScalarConverter(ScalarConverter const &src); // コピーコンストラクタ
+		~ScalarConverter(void); // デストラクタ
+		ScalarConverter	&operator=(ScalarConverter const &rhs); // 代入演算子のオーバーロード
 	public:
-		static void	convert(const std::string& str);
+		static void	convert(const std::string& str); // 文字列をさまざまなスカラー型に変換して出力する関数
 };
 
+// 関数の宣言
 e_type	whichType(const std::string& str, size_t& len);
 void	printSpecial(const std::string& str);
 void	convertChar(const std::string& str, size_t& len);

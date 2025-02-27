@@ -12,6 +12,7 @@
 
 #include "ScalarConverter.hpp"
 
+// 文字列が特殊な浮動小数点値（nan、+inf、-inf）を表しているかをチェックする関数
 static int	isSpecial(const std::string& str)
 {
 	if (str == "nan" || str == "nanf" || str == "+inf" || str == "+inff" || str == "-inf" || str == "-inff")
@@ -19,6 +20,7 @@ static int	isSpecial(const std::string& str)
 	return 0;
 }
 
+// 文字列が文字を表しているかをチェックする関数
 static int	isChar(const std::string& str, size_t& len)
 {
 	if (len == 1 && !isdigit(str[0]))
@@ -28,6 +30,7 @@ static int	isChar(const std::string& str, size_t& len)
 	return 0;
 }
 
+// 文字列が整数を表しているかをチェックする関数
 static int	isInt(const std::string& str, size_t& len)
 {
 	int		i = 0;
@@ -47,6 +50,7 @@ static int	isInt(const std::string& str, size_t& len)
 	return 1;
 }
 
+// 文字列が浮動小数点数を表しているかをチェックする関数
 static int	isFloat(const std::string& str, size_t& len, size_t& dot)
 {
 	for (int j = dot - 1; j >= 0; j--)
@@ -66,6 +70,7 @@ static int	isFloat(const std::string& str, size_t& len, size_t& dot)
 	return 1;
 }
 
+// 入力文字列の型を判定する関数
 e_type  whichType(const std::string& str, size_t& len)
 {
     size_t  dot = str.find('.');

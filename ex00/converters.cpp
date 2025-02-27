@@ -12,6 +12,7 @@
 
 #include "ScalarConverter.hpp"
 
+// 特殊な浮動小数点値（nan、+inf、-inf）を出力する関数
 void	printSpecial(const std::string& str)
 {
 	if (str == "nan" || str == "nanf")
@@ -37,6 +38,7 @@ void	printSpecial(const std::string& str)
 	}
 }
 
+// 文字列を文字型に変換して出力する関数
 void	convertChar(const std::string& str, size_t& len)
 {
 	char	c = 0;
@@ -57,6 +59,7 @@ void	convertChar(const std::string& str, size_t& len)
 		std::cout << "Non displayable" << std::endl;
 }
 
+// 文字列を整数型に変換して出力する関数
 void	convertInt(const std::string& str)
 {
 	long	l = std::atol(str.c_str());
@@ -80,6 +83,7 @@ void	convertInt(const std::string& str)
 	std::cout << "double: " << static_cast<double>(l) << ".0" << std::endl;
 }
 
+// 文字列を浮動小数点型に変換して出力する関数
 void	convertFloat(const std::string& str)
 {
 	float	f = std::atof(str.c_str());
@@ -108,6 +112,7 @@ void	convertFloat(const std::string& str)
 	std::cout << "double: " << static_cast<double>(f) << (tolerance ? ".0" : "") << std::endl;
 }
 
+// 文字列を倍精度浮動小数点型に変換して出力する関数
 void	convertDouble(const std::string& str)
 {
 	double		d = std::atof(str.c_str());

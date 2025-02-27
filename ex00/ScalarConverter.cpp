@@ -12,23 +12,28 @@
 
 #include "ScalarConverter.hpp"
 
+// デフォルトコンストラクタ（プライベート）
 ScalarConverter::ScalarConverter(void)
 { }
 
+// コピーコンストラクタ（プライベート）
 ScalarConverter::ScalarConverter(ScalarConverter const &src)
 {
     *this = src;
 }
 
+// デストラクタ（プライベート）
 ScalarConverter::~ScalarConverter(void)
 { }
 
+// 代入演算子（プライベート）
 ScalarConverter	&ScalarConverter::operator=(ScalarConverter const &rhs)
 {
 	(void)rhs;
 	return *this;
 }
 
+// 文字列をさまざまなスカラー型に変換する静的メソッド
 void    ScalarConverter::convert(const std::string& str)
 {
     size_t  len = str.length();
@@ -36,7 +41,7 @@ void    ScalarConverter::convert(const std::string& str)
     switch(type)
     {
         case INVALID:
-            std::cout << "Invalid input" << std::endl;
+            std::cout << "Invalid input" << std::endl; // 入力文字列の型を判定する
             break;
         case SPECIAL:
             printSpecial(str);

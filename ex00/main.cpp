@@ -19,6 +19,6 @@ int main(int argc, char **argv)
 		std::cout << "Please enter a char/ int/ float/ double value\n";
 		return (0);
 	}
-	ScalarConverter::convert(argv[1]);
+	ScalarConverter::convert(argv[1]); // 入力文字列を変換する
 	return (0);
 }
